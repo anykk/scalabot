@@ -1,7 +1,7 @@
 import java.time.LocalDateTime
 
 import Requests._
-import StateModels._
+import Models._
 
 
 object PollManager {

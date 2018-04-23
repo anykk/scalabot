@@ -1,50 +1,12 @@
-import java.time.LocalDateTime
-
+import Models.Poll
+import scalaz.State
 
 package object StateModels {
-  private val idStream = Stream.from(1).iterator
+  type Repository = Map[Int, Poll]
+  type Contexts = Map[Int, Int]
 
-  case class Poll(name: String,
-                  //owner: User, TODO realizzzeIT
-                  anonymity: Boolean,
-                  visibility: Boolean,
-                  startTime: Option[LocalDateTime],
-                  stopTime: Option[LocalDateTime]) {
+  type PollsState = State[Repository, CommandResult]
+  type ContextsState = StateModels[Contexts, CommandResult] // ?
 
-    override def toString: String = {
-      s"""Name: $name
-         |Anonymity: $anonymity
-         |Visibility: $visibility
-         |Start time: ${startTime.getOrElse("not set")}
-         |Stop time: ${stopTime.getOrElse("not set")}
-     """.stripMargin
-    }
-  }
-
-  object Poll {
-    def started(poll: Poll, now: LocalDateTime): Boolean =
-      poll.startTime.exists(now.isAfter)
-
-    def stopped(poll: Poll, now: LocalDateTime): Boolean =
-      poll.stopTime.exists(now.isAfter)
-
-    def active(poll: Poll, now: LocalDateTime): Boolean =
-      started(poll, now) && !stopped(poll, now)
-
-    def visible(poll: Poll, now: LocalDateTime): Boolean =
-      poll.visibility && started(poll, now) || !poll.visibility && stopped(poll, now)
-  }
-
-  case class State(polls: Map[Int, Poll])
-
-  object State {
-    def addPoll(state: State, poll: Poll): State = {
-      val id = idStream.next()
-      state.copy(polls = state.polls + (id -> poll))
-    }
-
-    def deletePoll(state: State, id: Int, now: LocalDateTime): State = {
-      ???
-    }
-  }
+  def createPoll()
 }
