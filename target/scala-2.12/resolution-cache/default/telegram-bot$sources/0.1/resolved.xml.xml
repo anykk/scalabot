@@ -4,7 +4,7 @@
 		module="telegram-bot$sources"
 		revision="0.1"
 		status="integration"
-		publication="20180423111420"
+		publication="20180423113831"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -52,6 +52,10 @@
 		</dependency>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.5" transitive="false" conf="scala-tool->default,compile,runtime,optional,optional(default),master">
 			<artifact name="scala-compiler" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalaz" name="scalaz-core_2.12" rev="7.2.21" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="scalaz-core_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 	</dependencies>

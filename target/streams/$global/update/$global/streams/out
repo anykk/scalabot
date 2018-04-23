@@ -39,24 +39,46 @@
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0 [compile->master]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] sbt-chain: Checking cache for: dependency: org.scalaz#scalaz-core_2.12;7.2.21 {compile=[default(compile)]}
+[debug] sbt-chain-delegate: Checking cache for: dependency: org.scalaz#scalaz-core_2.12;7.2.21 {compile=[default(compile)]}
+[debug] 		tried C:\Users\kiril\.ivy2\local\org.scalaz\scalaz-core_2.12\7.2.21\ivys\ivy.xml
+[debug] 	local: no ivy file found for org.scalaz#scalaz-core_2.12;7.2.21
+[debug] 		tried https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.pom
+[debug] 	public: found md file for org.scalaz#scalaz-core_2.12;7.2.21
+[debug] 		=> https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.pom (7.2.21)
+[debug] downloading https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.pom ...
+[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.pom
+[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.pom.sha1
+[debug] sha1 OK for https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.pom
+[debug] 	[SUCCESSFUL ] org.scalaz#scalaz-core_2.12;7.2.21!scalaz-core_2.12.pom(pom.original) (359ms)
+[debug] 		tried C:\Users\kiril\.ivy2\local\org.scalaz\scalaz-core_2.12\7.2.21\bundles\scalaz-core_2.12.jar
+[debug] 		tried https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.jar
+[debug] 	found org.scalaz#scalaz-core_2.12;7.2.21 in public
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->runtime]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->compile]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->master(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->compile(*)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->compile]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->master]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
 [debug] sbt-chain: Checking cache for: dependency: org.scalactic#scalactic_2.12;3.0.5 {compile=[default(compile)]}
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.scalactic#scalactic_2.12;3.0.5 {compile=[default(compile)]}
-[debug] 		tried C:\Users\kiril\.ivy2\local\org.scalactic\scalactic_2.12\3.0.5\ivys\ivy.xml
-[debug] 	local: no ivy file found for org.scalactic#scalactic_2.12;3.0.5
-[debug] 		tried https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.pom
-[debug] 	public: found md file for org.scalactic#scalactic_2.12;3.0.5
-[debug] 		=> https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.pom (3.0.5)
-[debug] downloading https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.pom ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.pom
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.pom.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.pom
-[debug] 	[SUCCESSFUL ] org.scalactic#scalactic_2.12;3.0.5!scalactic_2.12.pom(pom.original) (373ms)
-[debug] 		tried C:\Users\kiril\.ivy2\local\org.scalactic\scalactic_2.12\3.0.5\bundles\scalactic_2.12.jar
-[debug] 		tried https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.jar
-[debug] 	found org.scalactic#scalactic_2.12;3.0.5 in public
+[debug] sbt-chain: module revision found in cache: org.scalactic#scalactic_2.12;3.0.5
+[debug] 	found org.scalactic#scalactic_2.12;3.0.5 in sbt-chain
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {provided=[compile(*), provided(*), runtime(*), master(compile)]}
@@ -160,6 +182,27 @@
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0->org.scala-lang#scala-library;2.12.5 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0->org.scala-lang#scala-library;2.12.5 [runtime->compile]
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0 [compile->master]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->runtime]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->compile]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->master(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->compile(*)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->compile]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->master]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
@@ -273,6 +316,29 @@
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0 [compile->master]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->runtime]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->compile]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->master(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->compile(*)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->compile]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->master]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
@@ -359,20 +425,8 @@
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
 [debug] sbt-chain: Checking cache for: dependency: org.scalatest#scalatest_2.12;3.0.5 {test=[default(compile)]}
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.scalatest#scalatest_2.12;3.0.5 {test=[default(compile)]}
-[debug] 		tried C:\Users\kiril\.ivy2\local\org.scalatest\scalatest_2.12\3.0.5\ivys\ivy.xml
-[debug] 	local: no ivy file found for org.scalatest#scalatest_2.12;3.0.5
-[debug] 		tried https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.pom
-[debug] 	public: found md file for org.scalatest#scalatest_2.12;3.0.5
-[debug] 		=> https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.pom (3.0.5)
-[debug] downloading https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.pom ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.pom
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.pom.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.pom
-[debug] 	[SUCCESSFUL ] org.scalatest#scalatest_2.12;3.0.5!scalatest_2.12.pom(pom.original) (389ms)
-[debug] 		tried C:\Users\kiril\.ivy2\local\org.scalatest\scalatest_2.12\3.0.5\bundles\scalatest_2.12.jar
-[debug] 		tried https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.jar
-[debug] 	found org.scalatest#scalatest_2.12;3.0.5 in public
+[debug] sbt-chain: module revision found in cache: org.scalatest#scalatest_2.12;3.0.5
+[debug] 	found org.scalatest#scalatest_2.12;3.0.5 in sbt-chain
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalatest#scalatest_2.12;3.0.5 [test->runtime]
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalatest#scalatest_2.12;3.0.5 [test->compile]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {provided=[compile(*), provided(*), runtime(*), master(compile)]}
@@ -541,6 +595,31 @@
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0 [compile->master]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->runtime]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->compile]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->master(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->compile(*)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->compile]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->master]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
@@ -664,6 +743,31 @@
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0->org.scala-lang#scala-library;2.12.5 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0->org.scala-lang#scala-library;2.12.5 [runtime->compile]
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0 [compile->master]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->runtime]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->compile]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->master(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->compile(*)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->compile]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->master]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
@@ -797,6 +901,35 @@
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0->org.scala-lang#scala-library;2.12.5 [runtime->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0->org.scala-lang#scala-library;2.12.5 [runtime->compile]
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0 [compile->master]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->default(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.12.5 {scala-tool=[default, optional(default)]}
+[debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.12.5 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.12.5 {scala-tool=[default, optional(default)], compile=[default(compile)]}
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->runtime]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->compile]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->master(compile)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [compile->compile(*)]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->runtime(*)]
+[debug] == resolving dependencies org.scalaz#scalaz-core_2.12;7.2.21->org.scala-lang#scala-library;2.12.5 [runtime->compile]
+[debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalaz#scalaz-core_2.12;7.2.21 [compile->master]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.12.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.12.5 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
 [debug] == resolving dependencies default#telegram-bot_2.12;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
@@ -1165,87 +1298,95 @@
 [debug] ignoring unhandled DependencyDescriptorMediator: class sbt.internal.librarymanagement.IvyScalaUtil$OverrideScalaMediator
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
-[debug] 		tried https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.jar
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.5!scala-library.jar
-[info] downloading https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.jar ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.jar
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle)
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0!scala-parser-combinators_2.12.jar(bundle)
-[debug] 		tried https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.jar
-[info] downloading https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.jar ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.5!scala-compiler.jar
+[debug] no default ivy user dir defined: set to C:\Users\kiril\.ivy2
+[debug] no default ivy user dir defined: set to C:\Users\kiril\.ivy2
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (26ms)
+[debug] 	default cache: C:\Users\kiril\.ivy2\cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (63ms)
+[debug] 	default cache: C:\Users\kiril\.ivy2\cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.5!scala-reflect.jar
+[debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.5!scalatest_2.12.jar(bundle)
 [debug] no default ivy user dir defined: set to C:\Users\kiril\.ivy2
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] no default ivy user dir defined: set to C:\Users\kiril\.ivy2
-[debug] no default ivy user dir defined: set to C:\Users\kiril\.ivy2
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
+[debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
+[debug] settings loaded (25ms)
+[debug] 	default cache: C:\Users\kiril\.ivy2\cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] 		tried https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.jar
+[info] downloading https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.jar ...
+[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.jar
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
 [debug] 	[NOT REQUIRED] jline#jline;2.14.5!jline.jar
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.1.0!scala-parser-combinators_2.12.jar(bundle)
+[debug] 	[NOT REQUIRED] org.scalactic#scalactic_2.12;3.0.5!scalactic_2.12.jar(bundle)
+[debug] settings loaded (67ms)
 [debug] no default ivy user dir defined: set to C:\Users\kiril\.ivy2
+[debug] 	default cache: C:\Users\kiril\.ivy2\cache
+[debug] 	default resolver: default
+[debug] 	-- 5 resolvers:
+[debug] 	shared [file]
+[debug] 	default [chain] [local, main]
+[debug] 	public [ibiblio]
+[debug] 	main [chain] [shared, public]
+[debug] 	local [file]
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.5!scala-library.jar
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] no default ivy user dir defined: set to C:\Users\kiril\.ivy2
-[debug] no default ivy user dir defined: set to C:\Users\kiril\.ivy2
-[debug] no default ivy user dir defined: set to C:\Users\kiril\.ivy2
-[debug] no default ivy user dir defined: set to C:\Users\kiril\.ivy2
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
 [debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
-[debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
+[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-public.xml
 [debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
 [debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
 [debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
 [debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] no default cache defined: set to C:\Users\kiril\.ivy2\cache
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-shared.xml
 [debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
 [debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (143ms)
-[debug] 	default cache: C:\Users\kiril\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-local.xml
-[debug] settings loaded (168ms)
-[debug] 	default cache: C:\Users\kiril\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (152ms)
+[debug] settings loaded (29ms)
 [debug] 	default cache: C:\Users\kiril\.ivy2\cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -1255,38 +1396,7 @@
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
 [debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-main-chain.xml
-[debug] settings loaded (178ms)
-[debug] 	default cache: C:\Users\kiril\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] settings loaded (162ms)
-[debug] 	default cache: C:\Users\kiril\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] settings loaded (162ms)
-[debug] 	shared [file]
-[debug] 	default cache: C:\Users\kiril\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	default [chain] [local, main]
-[debug] 	-- 5 resolvers:
-[debug] 	public [ibiblio]
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] settings loaded (189ms)
+[debug] settings loaded (26ms)
 [debug] 	default cache: C:\Users\kiril\.ivy2\cache
 [debug] 	default resolver: default
 [debug] 	-- 5 resolvers:
@@ -1295,33 +1405,20 @@
 [debug] 	public [ibiblio]
 [debug] 	main [chain] [shared, public]
 [debug] 	local [file]
-[debug] including url: jar:file:/C:/Users/kiril/.sbt/boot/scala-2.12.4/org.scala-sbt/sbt/1.1.4/ivy-2.3.0-sbt-b18f59ea3bc914a297bb6f1a4f7fb0ace399e310.jar!/org/apache/ivy/core/settings/ivysettings-default-chain.xml
-[debug] settings loaded (189ms)
-[debug] 	default cache: C:\Users\kiril\.ivy2\cache
-[debug] 	default resolver: default
-[debug] 	-- 5 resolvers:
-[debug] 	shared [file]
-[debug] 	default [chain] [local, main]
-[debug] 	public [ibiblio]
-[debug] 	main [chain] [shared, public]
-[debug] 	local [file]
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.jar.sha1
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.jar.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.jar
-[info] 	[SUCCESSFUL ] org.scalatest#scalatest_2.12;3.0.5!scalatest_2.12.jar(bundle) (2863ms)
-[debug] sha1 OK for https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.jar
-[info] 	[SUCCESSFUL ] org.scalactic#scalactic_2.12;3.0.5!scalactic_2.12.jar(bundle) (2979ms)
-[debug] :: resolution report :: resolve 4240ms :: artifacts dl 3018ms
-[debug] 	report for default#telegram-bot_2.12;0.1 compile produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-compile.xml
-[debug] 	report for default#telegram-bot_2.12;0.1 runtime produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-runtime.xml
-[debug] 	report for default#telegram-bot_2.12;0.1 test produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-test.xml
-[debug] 	report for default#telegram-bot_2.12;0.1 provided produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-provided.xml
-[debug] 	report for default#telegram-bot_2.12;0.1 optional produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-optional.xml
-[debug] 	report for default#telegram-bot_2.12;0.1 compile-internal produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-compile-internal.xml
-[debug] 	report for default#telegram-bot_2.12;0.1 runtime-internal produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-runtime-internal.xml
-[debug] 	report for default#telegram-bot_2.12;0.1 test-internal produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-test-internal.xml
-[debug] 	report for default#telegram-bot_2.12;0.1 plugin produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-plugin.xml
-[debug] 	report for default#telegram-bot_2.12;0.1 pom produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-pom.xml
-[debug] 	report for default#telegram-bot_2.12;0.1 scala-tool produced in C:\Users\kiril\Desktop\Workspace\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-scala-tool.xml
-[debug] 	resolve done (4240ms resolve - 3018ms download)
+[debug] 	public: downloading https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.jar.sha1
+[debug] sha1 OK for https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.jar
+[info] 	[SUCCESSFUL ] org.scalaz#scalaz-core_2.12;7.2.21!scalaz-core_2.12.jar(bundle) (2962ms)
+[debug] :: resolution report :: resolve 2982ms :: artifacts dl 3404ms
+[debug] 	report for default#telegram-bot_2.12;0.1 compile produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-compile.xml
+[debug] 	report for default#telegram-bot_2.12;0.1 runtime produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-runtime.xml
+[debug] 	report for default#telegram-bot_2.12;0.1 test produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-test.xml
+[debug] 	report for default#telegram-bot_2.12;0.1 provided produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-provided.xml
+[debug] 	report for default#telegram-bot_2.12;0.1 optional produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-optional.xml
+[debug] 	report for default#telegram-bot_2.12;0.1 compile-internal produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-compile-internal.xml
+[debug] 	report for default#telegram-bot_2.12;0.1 runtime-internal produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-runtime-internal.xml
+[debug] 	report for default#telegram-bot_2.12;0.1 test-internal produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-test-internal.xml
+[debug] 	report for default#telegram-bot_2.12;0.1 plugin produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-plugin.xml
+[debug] 	report for default#telegram-bot_2.12;0.1 pom produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-pom.xml
+[debug] 	report for default#telegram-bot_2.12;0.1 scala-tool produced in C:\Users\kiril\Desktop\Workspace\Scala\Telegram-bot\target\scala-2.12\resolution-cache\reports\default-telegram-bot_2.12-scala-tool.xml
+[debug] 	resolve done (2982ms resolve - 3404ms download)
 [info] Done updating.

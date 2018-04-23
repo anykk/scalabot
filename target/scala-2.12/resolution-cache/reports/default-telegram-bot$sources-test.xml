@@ -7,28 +7,40 @@
 		revision="0.1"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20180423111420"/>
+		date="20180423113832"/>
 	<dependencies>
 		<module organisation="org.scalatest" name="scalatest_2.12">
-			<revision name="3.0.5" status="release" pubdate="20180129182347" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="4">
+			<revision name="3.0.5" status="release" pubdate="20180129182347" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="5">
 				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="4781" time="0" location="C:\Users\kiril\.ivy2\cache\org.scalatest\scalatest_2.12\ivy-3.0.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5.pom"/>
 				<caller organisation="default" name="telegram-bot$sources" conf="test, compile, runtime" rev="3.0.5" rev-constraint-default="3.0.5" rev-constraint-dynamic="3.0.5" callerrev="0.1"/>
 				<artifacts>
-					<artifact name="scalatest_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="1641808" time="898" location="C:\Users\kiril\.ivy2\cache\org.scalatest\scalatest_2.12\srcs\scalatest_2.12-3.0.5-sources.jar">
+					<artifact name="scalatest_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1641808" time="0" location="C:\Users\kiril\.ivy2\cache\org.scalatest\scalatest_2.12\srcs\scalatest_2.12-3.0.5-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.5/scalatest_2.12-3.0.5-sources.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang.modules" name="scala-xml_2.12">
-			<revision name="1.0.6" status="release" pubdate="20161101192105" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
+			<revision name="1.0.6" status="release" pubdate="20161101192105" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
 				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
 				<metadata-artifact status="no" details="" size="3175" time="0" location="C:\Users\kiril\.ivy2\cache\org.scala-lang.modules\scala-xml_2.12\ivy-1.0.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.pom"/>
 				<caller organisation="default" name="telegram-bot$sources" conf="test, compile, runtime" rev="1.0.6" rev-constraint-default="1.0.6" rev-constraint-dynamic="1.0.6" callerrev="0.1"/>
 				<artifacts>
 					<artifact name="scala-xml_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="109199" time="0" location="C:\Users\kiril\.ivy2\cache\org.scala-lang.modules\scala-xml_2.12\srcs\scala-xml_2.12-1.0.6-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalaz" name="scalaz-core_2.12">
+			<revision name="7.2.21" status="release" pubdate="20180406050601" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalaz.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="4">
+				<license name="BSD-style" url="https://opensource.org/licenses/BSD-3-Clause"/>
+				<metadata-artifact status="no" details="" size="2674" time="0" location="C:\Users\kiril\.ivy2\cache\org.scalaz\scalaz-core_2.12\ivy-7.2.21.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21.pom"/>
+				<caller organisation="default" name="telegram-bot$sources" conf="test, compile, runtime" rev="7.2.21" rev-constraint-default="7.2.21" rev-constraint-dynamic="7.2.21" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="scalaz-core_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="384024" time="561" location="C:\Users\kiril\.ivy2\cache\org.scalaz\scalaz-core_2.12\srcs\scalaz-core_2.12-7.2.21-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.21/scalaz-core_2.12-7.2.21-sources.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -75,7 +87,7 @@
 				<metadata-artifact status="no" details="" size="3002" time="0" location="C:\Users\kiril\.ivy2\cache\org.scalactic\scalactic_2.12\ivy-3.0.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5.pom"/>
 				<caller organisation="default" name="telegram-bot$sources" conf="test, compile, runtime" rev="3.0.5" rev-constraint-default="3.0.5" rev-constraint-dynamic="3.0.5" callerrev="0.1"/>
 				<artifacts>
-					<artifact name="scalactic_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="201169" time="858" location="C:\Users\kiril\.ivy2\cache\org.scalactic\scalactic_2.12\srcs\scalactic_2.12-3.0.5-sources.jar">
+					<artifact name="scalactic_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="201169" time="0" location="C:\Users\kiril\.ivy2\cache\org.scalactic\scalactic_2.12\srcs\scalactic_2.12-3.0.5-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.5/scalactic_2.12-3.0.5-sources.jar"/>
 					</artifact>
 				</artifacts>

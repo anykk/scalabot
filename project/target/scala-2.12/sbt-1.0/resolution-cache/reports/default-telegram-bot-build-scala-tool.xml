@@ -9,15 +9,15 @@
 		extra-sbtVersion="1.0"
 		conf="scala-tool"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20180423105846"/>
+		date="20180423113749"/>
 	<dependencies>
 		<module organisation="org.scala-lang" name="scala-compiler">
-			<revision name="2.12.4" status="release" pubdate="20171011124031" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, optional, optional(default), master" position="0">
+			<revision name="2.12.4" status="release" pubdate="20171011124031" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, optional, optional(default), master" position="0">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="successful" details="" size="2260" time="338" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-compiler\ivy-2.12.4.xml" searched="true" original-local-location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-compiler\ivy-2.12.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.4/scala-compiler-2.12.4.pom"/>
+				<metadata-artifact status="no" details="" size="3125" time="0" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-compiler\ivy-2.12.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.4/scala-compiler-2.12.4.pom"/>
 				<caller organisation="default" name="telegram-bot-build" conf="scala-tool" rev="2.12.4" rev-constraint-default="2.12.4" rev-constraint-dynamic="2.12.4" callerrev="0.1.0-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="scala-compiler" type="jar" ext="jar" status="successful" details="" size="9790479" time="15342" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-compiler\jars\scala-compiler-2.12.4.jar">
+					<artifact name="scala-compiler" type="jar" ext="jar" status="no" details="" size="9790479" time="0" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-compiler\jars\scala-compiler-2.12.4.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.4/scala-compiler-2.12.4.jar"/>
 					</artifact>
 				</artifacts>
@@ -48,27 +48,27 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.12.4" status="release" pubdate="20171011122224" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.4/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="2">
+			<revision name="2.12.4" status="release" pubdate="20171011122224" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.4/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="2">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="successful" details="" size="1804" time="360" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.12.4.xml" searched="true" original-local-location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.12.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.4/scala-reflect-2.12.4.pom"/>
+				<metadata-artifact status="no" details="" size="2860" time="0" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.12.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.4/scala-reflect-2.12.4.pom"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="default, compile, runtime, optional, master" rev="2.12.4" rev-constraint-default="2.12.4" rev-constraint-dynamic="2.12.4" callerrev="2.12.4"/>
 				<artifacts>
-					<artifact name="scala-reflect" type="jar" ext="jar" status="successful" details="" size="3587892" time="7907" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.12.4.jar">
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3587892" time="0" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.12.4.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.4/scala-reflect-2.12.4.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.12.4" status="release" pubdate="20171011120456" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.4/" downloaded="true" searched="true" default="false" conf="default, compile, runtime(*), master(compile), runtime, optional, optional(default), compile(*), master" position="1">
+			<revision name="2.12.4" status="release" pubdate="20171011120456" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.4/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, optional, optional(default), compile(*), master" position="1">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="successful" details="" size="1594" time="733" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-library\ivy-2.12.4.xml" searched="true" original-local-location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-library\ivy-2.12.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.pom"/>
+				<metadata-artifact status="no" details="" size="2685" time="0" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-library\ivy-2.12.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.pom"/>
 				<caller organisation="default" name="telegram-bot-build" conf="scala-tool" rev="2.12.4" rev-constraint-default="2.12.4" rev-constraint-dynamic="2.12.4" callerrev="0.1.0-SNAPSHOT"/>
 				<caller organisation="org.scala-lang" name="scala-reflect" conf="compile, runtime" rev="2.12.4" rev-constraint-default="2.12.4" rev-constraint-dynamic="2.12.4" callerrev="2.12.4"/>
 				<caller organisation="org.scala-lang" name="scala-compiler" conf="default, compile, runtime, optional, master" rev="2.12.4" rev-constraint-default="2.12.4" rev-constraint-dynamic="2.12.4" callerrev="2.12.4"/>
 				<caller organisation="org.scala-lang.modules" name="scala-xml_2.12" conf="compile, runtime" rev="2.12.4" rev-constraint-default="2.12.4" rev-constraint-dynamic="2.12.4" callerrev="1.0.6"/>
 				<artifacts>
-					<artifact name="scala-library" type="jar" ext="jar" status="successful" details="" size="5247152" time="12068" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.12.4.jar">
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5247152" time="0" location="C:\Users\kiril\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.12.4.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.jar"/>
 					</artifact>
 				</artifacts>
