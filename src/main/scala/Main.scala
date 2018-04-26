@@ -1,11 +1,18 @@
 object Main {
-  def main(args: Array[String]): Unit = {
-    val parser = CommandParser
-    val manager = PollManager
+  val parser = CommandParser
 
-    while (true){
-      val command = scala.io.StdIn.readLine("Command: ")
-      println(manager.applyCommand(manager.polls, parser.parse(command)))
-    }
+  def main(args: Array[String]): Unit = {
+    loop()
+  }
+
+
+  @scala.annotation.tailrec
+  def loop(): Unit = {
+    val input = scala.io.StdIn.readLine("Comandu mraz:")
+
+    if (input == "/bye") return
+
+    println(parser.parse(input))
+    loop()
   }
 }

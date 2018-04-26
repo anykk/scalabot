@@ -2,49 +2,34 @@ import java.time.LocalDateTime
 
 
 package object Models {
-  private val idStream = Stream.from(1).iterator
+  type User = Int
 
   case class Poll(name: String,
-                  //owner: User, TODO realizzzeIT
+                  owner: User,
                   anonymity: Boolean,
                   visibility: Boolean,
                   startTime: Option[LocalDateTime],
-                  stopTime: Option[LocalDateTime]) {
-
-    override def toString: String = {
-      s"""Name: $name
-         |Anonymity: $anonymity
-         |Visibility: $visibility
-         |Start time: ${startTime.getOrElse("not set")}
-         |Stop time: ${stopTime.getOrElse("not set")}
-     """.stripMargin
-    }
-  }
+                  stopTime: Option[LocalDateTime],
+                  questions: Vector[Question])
 
   object Poll {
-    def started(poll: Poll, now: LocalDateTime): Boolean =
+    def isStarted(poll: Poll, now: LocalDateTime): Boolean =
       poll.startTime.exists(now.isAfter)
 
-    def stopped(poll: Poll, now: LocalDateTime): Boolean =
+    def isStopped(poll: Poll, now: LocalDateTime): Boolean =
       poll.stopTime.exists(now.isAfter)
 
-    def active(poll: Poll, now: LocalDateTime): Boolean =
-      started(poll, now) && !stopped(poll, now)
+    def isActive(poll: Poll, now: LocalDateTime): Boolean =
+      isStarted(poll, now) && !isStopped(poll, now)
 
-    def visible(poll: Poll, now: LocalDateTime): Boolean =
-      poll.visibility && started(poll, now) || !poll.visibility && stopped(poll, now)
+    def isVisible(poll: Poll, now: LocalDateTime): Boolean =
+      poll.visibility && isStarted(poll, now) || !poll.visibility && isStopped(poll, now)
   }
 
-  case class State(polls: Map[Int, Poll])
+  sealed trait Question
 
-  object State {
-    def addPoll(state: State, poll: Poll): State = {
-      val id = idStream.next()
-      state.copy(polls = state.polls + (id -> poll))
-    }
+  sealed trait Answer
 
-    def deletePoll(state: State, id: Int, now: LocalDateTime): State = {
-      ???
-    }
-  }
+  case class Polls(map: Map[Int, Poll])
+
 }

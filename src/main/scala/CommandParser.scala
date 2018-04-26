@@ -3,12 +3,11 @@ import java.time.format.DateTimeFormatter
 
 import scala.util.Try
 import scala.util.parsing.combinator._
-
-import Requests._
+import Commands._
 
 
 trait CommandParser {
-  def parse(string: String): Request
+  def parse(string: String): Command
 }
 
 object CommandParser extends RegexParsers with CommandParser {
@@ -33,13 +32,13 @@ object CommandParser extends RegexParsers with CommandParser {
   def visibility: Parser[Boolean] = "(" ~> "afterstop|continuous".r <~ ")" ^^ (visibilityMap(_))
 
   def stringArgument: Parser[String] =
-    "(" ~> rep(leftBracket | rightBracket | string) <~ ")" ^^ (xs => xs.mkString(sep=" "))
+    "(" ~> rep(leftBracket | rightBracket | string) <~ ")" ^^ (xs => xs.mkString(sep = " "))
 
   def digitArgument: Parser[Int] = "(" ~> digits <~ ")"
 
   def dateArgument: Parser[Option[LocalDateTime]] = "(" ~> date <~ ")"
 
-  def createPoll: Parser[CreatePollRequest] =
+  def createPoll: Parser[CreatePollCommand] =
     "/create_poll" ~> stringArgument ~
       opt(
         anonymity ~
@@ -50,41 +49,103 @@ object CommandParser extends RegexParsers with CommandParser {
           )
       ) ^^ {
       case name ~ None =>
-        CreatePollRequest(name)
+        CreatePollCommand(name)
       case name ~ Some(anonymity ~ None) =>
-        CreatePollRequest(name, anonymity)
+        CreatePollCommand(name, anonymity)
       case name ~ Some(anonymity ~ Some(visibility ~ None)) =>
-        CreatePollRequest(name, anonymity, visibility)
+        CreatePollCommand(name, anonymity, visibility)
       case name ~ Some(anonymity ~ Some(visibility ~ Some(startTime ~ None))) =>
-        CreatePollRequest(name, anonymity, visibility, startTime)
+        CreatePollCommand(name, anonymity, visibility, startTime)
       case name ~ Some(anonymity ~ Some(visibility ~ Some(startTime ~ Some(endTime)))) =>
-        CreatePollRequest(name, anonymity, visibility, startTime, endTime)
+        CreatePollCommand(name, anonymity, visibility, startTime, endTime)
     }
 
-  def list: Parser[Request] = "/list".r ^^ { _ => ListRequest() }
-
-  def commandWithId = (commandName: String) =>
-    commandName.r ~> digitArgument
-
-  def deletePoll: Parser[DeletePollRequest] = commandWithId("/delete_poll") ^^ { id: Int => DeletePollRequest(id) }
-
-  def startPoll: Parser[StartPollRequest] = commandWithId("/start_poll") ^^ { id: Int => StartPollRequest(id) }
-
-  def stopPoll: Parser[StopPollRequest] = commandWithId("/stop_poll") ^^ { id: Int => StopPollRequest(id) }
-
-  def result: Parser[ResultRequest] = commandWithId("/result") ^^ { id: Int => ResultRequest(id) }
-
-  def command = {
-    createPoll |
-    list |
-    deletePoll |
-    startPoll |
-    stopPoll |
-    result
-    // | {commandsWithContext}
+  def list: Parser[ListCommand] = "/list".r ^^^ {
+    ListCommand()
   }
 
-  def parse(string: String): Request = {
-    CommandParser.parseAll(command, string).getOrElse(IllegalRequest(s"Bad command:\n$string"))
+  private def commandWithId: String => Parser[Int] = (commandName: String) =>
+    commandName.r ~> digitArgument
+
+  def deletePoll: Parser[DeletePollCommand] = commandWithId("/delete_poll") ^^ {
+    id: Int => DeletePollCommand(id)
+  }
+
+  def startPoll: Parser[StartPollCommand] = commandWithId("/start_poll") ^^ {
+    id: Int => StartPollCommand(id)
+  }
+
+  def stopPoll: Parser[StopPollCommand] = commandWithId("/stop_poll") ^^ {
+    id: Int => StopPollCommand(id)
+  }
+
+  def result: Parser[ResultCommand] = commandWithId("/result") ^^ {
+    id: Int => ResultCommand(id)
+  }
+
+  def begin: Parser[BeginCommand] = commandWithId("/begin") ^^ {
+    id: Int => BeginCommand(id)
+  }
+
+  def end: Parser[EndCommand] = "/end".r ^^^ {
+    EndCommand()
+  }
+
+  def view: Parser[ViewCommand] = "/view".r ^^^ {
+    ViewCommand()
+  }
+
+  private def qType: Parser[QType] = opt("(" ~> "open|multi|choice".r <~ ")") ^^ {
+    case Some(s) => s match {
+      case "open" => Open
+      case "multi" => Multi
+      case "choice" => Choice
+    }
+    case None => Open
+  }
+
+  def addQuestion: Parser[AddQuestionCommand] = "/add_question".r ~>
+    stringArgument ~
+    qType ~
+    rep(stringArgument) ^^ {???}/*{
+    case question ~ qType ~ answers if answers.isEmpty => qType match {
+      case Open => AddQuestionCommand(question, answers, qType)
+    }
+    case question ~ qType ~ answers if answers.nonEmpty => qType match {
+      case Multi => AddQuestionCommand(question, answers, qType)
+      case Choice => AddQuestionCommand(question, answers, qType)
+    }
+
+  }*/
+
+
+  def deleteQuestion: Parser[DeleteQuestionCommand] = commandWithId("/deleteQuestion") ^^ {
+    id: Int => DeleteQuestionCommand(id)
+  }
+
+  def answer: Parser[AnswerCommand] = "/answer".r ~> digitArgument ~ stringArgument ^^ {
+    case id ~ answer => AnswerCommand(id, answer)
+  }
+
+  def command: Parser[Command] = {
+    createPoll |
+      list |
+      deletePoll |
+      startPoll |
+      stopPoll |
+      result |
+      begin |
+      end |
+      view |
+      addQuestion |
+      deleteQuestion |
+      answer
+  }
+
+  def parse(string: String): Command = {
+    CommandParser.parseAll(command, string) match {
+      case Success(x, _) => x
+      case NoSuccess(_) => IllegalCommand(string)
+    }
   }
 }

@@ -4,7 +4,7 @@
 		module="telegram-bot_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20180423113824"
+		publication="20180425213814"
 	>
 		<description>
 		Telegram-bot
@@ -30,8 +30,8 @@
 		<artifact name="telegram-bot_2.12" type="doc" ext="jar" conf="compile" e:classifier="javadoc"/>
 	</publications>
 	<dependencies>
-		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.5" conf="scala-tool->default,optional(default)"/>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.12.5" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.12.4" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.12.4" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="org.scala-lang.modules" name="scala-parser-combinators_2.12" rev="1.1.0" conf="compile->default(compile)"/>
 		<dependency org="org.scalaz" name="scalaz-core_2.12" rev="7.2.21" conf="compile->default(compile)"/>
 		<dependency org="org.scalactic" name="scalactic_2.12" rev="3.0.5" conf="compile->default(compile)"/>
