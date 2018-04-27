@@ -60,8 +60,8 @@ object CommandParser extends RegexParsers with CommandParser {
         CreatePoll(name, anonymity, visibility, startTime, endTime)
     }
 
-  def list: Parser[List] = "/list".r ^^^ {
-    List()
+  def list: Parser[List_] = "/list".r ^^^ {
+    List_()
   }
 
   private def commandWithId: String => Parser[Int] = (commandName: String) =>

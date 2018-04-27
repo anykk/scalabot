@@ -1,13 +1,12 @@
+import Models.Polls
+
 object Main {
   private val parser = CommandParser
+  private val worker = Worker
+
+  private var polls = Polls(Map.empty)
 
   def main(args: Array[String]): Unit = {
-    /*
-    val (s1, a1) = addPoll(Poll("asd", 123, true, true, None, None, Vector.empty))(Polls(Map.empty))
-    val (s2, a2) = addPoll(Poll("asd", 123, true, true, None, None, Vector.empty))(s1)
-    val (s3, a3) = deletePoll(3)(s2)
-    println(s3)
-    */
     loop.run
   }
 
@@ -29,7 +28,12 @@ object Main {
 
   def loop: IO[Unit] = for {
     input <- getLine
-    _     <- putStrLn(parser.parse(input).toString)
+    _     <- putStrLn(
+      { val (s, a) = worker.performCommand(parser.parse(input))(polls)
+        polls = s
+        a.toString
+      }
+    )
     _     <- if (input == "/bye") IO(Unit) else loop
   } yield Unit
 }

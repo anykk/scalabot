@@ -8,7 +8,7 @@ package object Results {
   case class DeletePollResult(id: Int) extends CommandResult
   case class StartPollResult(id: Int) extends CommandResult
   case class StopPollResult(id: Int) extends CommandResult
-  case class ResultResult(id: Int) extends CommandResult //LULZ
+  case class PollingResult(id: Int) extends CommandResult
 
   case class BeginResult(id: Int) extends CommandResult
   case class EndResult() extends CommandResult
@@ -16,6 +16,8 @@ package object Results {
   case class AddQuestionResult(id: Int) extends CommandResult
   case class DeleteQuestionResult(id: Int) extends CommandResult
   case class AnswerResult() extends CommandResult //??
+
+  case object Bad extends CommandResult // ????????????
 
   //Result[A] (value: Option[A]) ???
   /*

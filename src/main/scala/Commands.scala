@@ -10,7 +10,7 @@ package object Commands {
                         visibility: Boolean = false,
                         startTime: Option[LocalDateTime] = None,
                         stopTime: Option[LocalDateTime] = None) extends Command
-  case class List() extends CommonCommand
+  case class List_() extends CommonCommand
   case class DeletePoll(id: Int) extends CommonCommand
   case class StartPoll(id: Int) extends CommonCommand
   case class StopPoll(id: Int) extends CommonCommand

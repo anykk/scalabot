@@ -33,23 +33,21 @@ class CommandParserTests extends  FlatSpec with Matchers {
       Option(LocalDateTime.parse("22:22:22 18:04:21", DateTimeFormatter.ofPattern("HH:mm:ss yy:MM:dd"))))
 
     parse("/create_poll ((illegalcommand") should be
-    UnknownCommand("/create_poll ((illegalcommand")
+    Unrecognized
   }
 
   it should "parse List " in {
-
     parse("/list illegalcommand") should be
-    UnknownCommand("/list illegalcommand")
+    Unrecognized
 
     parse("/list") should be
-    List()
-
+    List_()
   }
 
   it should "parse DeletePoll" in{
 
     parse("/delete_poll") should be
-    UnknownCommand("/delete_poll")
+    Unrecognized
 
     parse("/delete_poll 1") should be
     DeletePoll(1)
@@ -58,7 +56,7 @@ class CommandParserTests extends  FlatSpec with Matchers {
   it should "parse StartPoll" in {
 
     parse("/start_poll") should be
-    UnknownCommand("/start_poll")
+    Unrecognized
 
     parse("/start_poll 1") should be
     StartPoll(1)
@@ -67,7 +65,7 @@ class CommandParserTests extends  FlatSpec with Matchers {
   it should "parse StopPoll" in {
 
     parse("/stop_poll") should be
-    UnknownCommand("/stop_poll")
+    Unrecognized
 
     parse("/stop_poll 1") should be
     StopPoll(1)
