@@ -1,10 +1,10 @@
 import Models.Polls
 
 object Main {
-  private val parser = CommandParser
-  private val worker = Worker
+  private val cp = CommandParser
+  private val sm = StateManager
 
-  private var polls = Polls(Map.empty)
+  private var pr = Polls(Map.empty)
 
   def main(args: Array[String]): Unit = {
     loop.run
@@ -29,8 +29,8 @@ object Main {
   def loop: IO[Unit] = for {
     input <- getLine
     _     <- putStrLn(
-      { val (s, a) = worker.performCommand(parser.parse(input))(polls)
-        polls = s
+      { val (s, a) = sm.performAction(cp.parse(input))(pr)
+        pr = s
         a.toString
       }
     )

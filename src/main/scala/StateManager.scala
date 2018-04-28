@@ -5,10 +5,10 @@ import Models.{Poll, Polls}
 import Results._
 import scalaz.State
 
-object Worker {
+object StateManager {
   type CommonState = State[Polls, CommandResult]
 
-  def performCommand: Command => CommonState = {
+  def performAction: Command => CommonState = {
     case CreatePoll(name, anonymity, visibility, startTime, stopTime) => State { (s: Polls) =>
       val (ns, a) = Polls.addPoll(Poll(name, -1, anonymity, visibility, startTime, stopTime, Nil))(s)
       (ns, CreatePollResult(a)) }
