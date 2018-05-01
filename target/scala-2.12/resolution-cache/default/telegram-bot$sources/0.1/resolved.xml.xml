@@ -4,7 +4,7 @@
 		module="telegram-bot$sources"
 		revision="0.1"
 		status="integration"
-		publication="20180427222310"
+		publication="20180430171718"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

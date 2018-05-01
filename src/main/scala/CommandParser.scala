@@ -14,9 +14,9 @@ object CommandParser extends RegexParsers with CommandParser {
   private val anonymityMap = Map("yes" -> true, "no" -> false)
   private val visibilityMap = Map("afterstop" -> false, "continuous" -> true)
 
-  def leftBracket: Parser[String] = "((" ^^ (_ => "(")
+  def leftBracket: Parser[String] = "((" ^^^ "("
 
-  def rightBracket: Parser[String] = "))" ^^ (_ => ")")
+  def rightBracket: Parser[String] = "))" ^^^ ")"
 
   def string: Parser[String] = """[_a-zA-Zа-яА-ЯёЁ0-9.,:;'"*&!?]+""".r
 
@@ -60,9 +60,7 @@ object CommandParser extends RegexParsers with CommandParser {
         CreatePoll(name, anonymity, visibility, startTime, endTime)
     }
 
-  def list: Parser[List_] = "/list".r ^^^ {
-    List_()
-  }
+  def list: Parser[List_] = "/list".r ^^^ List_()
 
   private def commandWithId: String => Parser[Int] = (commandName: String) =>
     commandName.r ~> digitArgument
@@ -87,13 +85,9 @@ object CommandParser extends RegexParsers with CommandParser {
     id: Int => Begin(id)
   }
 
-  def end: Parser[End] = "/end".r ^^^ {
-    End()
-  }
+  def end: Parser[End] = "/end".r ^^^ End()
 
-  def view: Parser[View] = "/view".r ^^^ {
-    View()
-  }
+  def view: Parser[View] = "/view".r ^^^ View()
 
   private def qType: Parser[QType] = opt("(" ~> "open|multi|choice".r <~ ")") ^^ {
     case Some(s) => s match {

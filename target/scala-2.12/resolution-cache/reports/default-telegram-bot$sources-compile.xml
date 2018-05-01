@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="compile"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20180427222310"/>
+		date="20180430171718"/>
 	<dependencies>
 		<module organisation="org.scalaz" name="scalaz-core_2.12">
 			<revision name="7.2.21" status="release" pubdate="20180406050601" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalaz.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="6">

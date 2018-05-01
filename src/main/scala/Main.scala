@@ -29,8 +29,9 @@ object Main {
   def loop: IO[Unit] = for {
     input <- getLine
     _     <- putStrLn(
-      { val (s, a) = sm.performAction(cp.parse(input))(pr)
-        pr = s
+      {
+        val (ns, a) = sm.performAction(cp.parse(input))(pr)
+        pr = ns
         a.toString
       }
     )
