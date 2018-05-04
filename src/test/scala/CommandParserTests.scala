@@ -8,7 +8,7 @@ import Commands._
 
 
 class CommandParserTests extends  FlatSpec with Matchers {
-
+  /*
   it should "parse CreatePoll" in {
 
     parse("/create_poll (((how are you, darling?))") should be
@@ -70,5 +70,5 @@ class CommandParserTests extends  FlatSpec with Matchers {
     parse("/stop_poll 1") should be
     StopPoll(1)
   }
-
+  */
 }

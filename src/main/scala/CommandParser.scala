@@ -4,10 +4,12 @@ import java.time.format.DateTimeFormatter
 import scala.util.Try
 import scala.util.parsing.combinator._
 import Commands._
+import models.Types.{Choice, Multi, Open, QuestionType}
+
 
 
 trait CommandParser {
-  def parse(string: String): Command
+  def parse(string: String): Try[Command]
 }
 
 object CommandParser extends RegexParsers with CommandParser {
@@ -89,11 +91,11 @@ object CommandParser extends RegexParsers with CommandParser {
 
   def view: Parser[View] = "/view".r ^^^ View()
 
-  private def qType: Parser[QType] = opt("(" ~> "open|multi|choice".r <~ ")") ^^ {
+  private def qType: Parser[QuestionType] = opt("(" ~> "open|multi|choice".r <~ ")") ^^ {
     case Some(s) => s match {
       case "open" => Open
-      case "multi" => Multi
       case "choice" => Choice
+      case "multi" => Multi
     }
     case None => Open
   }
@@ -102,9 +104,9 @@ object CommandParser extends RegexParsers with CommandParser {
     stringArgument ~
     qType ~
     rep(stringArgument) ^? {
-    case question ~ Open ~ answers if answers.isEmpty => AddQuestion(question, answers)
-    case question ~ Multi ~ answers if answers.nonEmpty => AddQuestion(question, answers, Multi)
-    case question ~ Choice ~ answers if answers.nonEmpty => AddQuestion(question, answers, Multi)
+    case name ~ Open ~ options if options.isEmpty => AddQuestion(name, List.empty[String])
+    case name ~ Multi ~ options if options.nonEmpty => AddQuestion(name, options, Multi)
+    case name ~ Choice ~ options if options.nonEmpty => AddQuestion(name, options, Choice)
   }
 
   def deleteQuestion: Parser[DeleteQuestion] = commandWithId("/deleteQuestion") ^^ {
@@ -116,24 +118,25 @@ object CommandParser extends RegexParsers with CommandParser {
   }
 
   def command: Parser[Command] = {
-    createPoll    |
-    list          |
-    deletePoll    |
-    startPoll     |
-    stopPoll      |
-    result        |
-    begin         |
-    end           |
-    view          |
-    addQuestion   |
-    deleteQuestion|
+    createPoll     |
+    list           |
+    deletePoll     |
+    startPoll      |
+    stopPoll       |
+    result         |
+    begin          |
+    end            |
+    view           |
+    addQuestion    |
+    deleteQuestion |
     answer
   }
 
-  def parse(string: String): Command = {
-    CommandParser.parseAll(command, string) match {
-      case Success(x, _) => x
-      case NoSuccess(_) => Unrecognized
+  override def parse(string: String): Try[Command] = {
+    Try {
+      val result = CommandParser.parseAll(command, string)
+      if (result.successful) result.get
+      else throw new IllegalArgumentException(s"Bad command:\n$string")
     }
   }
 }
