@@ -104,7 +104,7 @@ object CommandParser extends RegexParsers with CommandParser {
     stringArgument ~
     qType ~
     rep(stringArgument) ^? {
-    case name ~ Open ~ options if options.isEmpty => AddQuestion(name, List.empty[String])
+    case name ~ Open ~ options if options.isEmpty => AddQuestion(name, Nil)
     case name ~ Multi ~ options if options.nonEmpty => AddQuestion(name, options, Multi)
     case name ~ Choice ~ options if options.nonEmpty => AddQuestion(name, options, Choice)
   }
