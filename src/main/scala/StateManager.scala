@@ -4,13 +4,14 @@ import cats.data.StateT
 import models.{Contexts, Poll, Polls}
 import models.Types.User
 
-import scala.util.{Failure, Success, Try}
+import scala.util.Try
 
 object StateManager {
   //type GenState = (Polls, Contexts) [?]
 
   import cats.implicits._
 
+  //apply(state: (Polls, Contexts), cmd: Command): Try[(Polls, Contexts), CommandResult]
   def performAction(user: User, triedCommand: Try[Command]): StateT[Try, Polls, CommandResult] =
     {
       ??? //TODO: How to generalize StateT?
