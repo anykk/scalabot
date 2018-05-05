@@ -10,53 +10,44 @@ case class Poll(name: String,
                 startTime: Option[LocalDateTime],
                 stopTime: Option[LocalDateTime],
                 owner: User,
-                questions: List[Question]
+                questions: Vector[Question]
                )
 
 object Poll {
-  def haveRights(u: User)(mp: Option[Poll]): Boolean = mp match {
-    case Some(v) => v.owner == u
-    case None => false
+  def haveRights(u: User)(p: Poll): Boolean = p.owner == u
+
+  def start(p: Poll)(n: LocalDateTime) = Try {
+    assert(couldStart(p), "Couldn't start this poll!")
+    p.copy(startTime = Option(n))
   }
 
-  def startPoll(mp: Option[Poll])(n: LocalDateTime) = Try {
-    assert(couldStart(mp), "Couldn't start this poll!")
-    mp.get.copy(startTime = Option(n))
+  def stop(p: Poll)(n: LocalDateTime) = Try {
+    assert(couldStop(p), "Couldn't stop this poll!")
+    p.copy(stopTime = Option(n))
   }
 
-  def stopPoll(mp: Option[Poll])(n: LocalDateTime) = Try {
-    assert(couldStop(mp), "Couldn't stop this poll!")
-    mp.get.copy(stopTime = Option(n))
-  }
+  def couldStart(p: Poll): Boolean =
+    p.startTime match {
+      case None => true
+      case Some(_) => false
+    }
 
-  def couldStart(mp: Option[Poll]): Boolean = mp match {
-    case Some(p) =>
-      p.startTime match {
-        case None => true
-        case Some(_) => false
-      }
-    case None => false
-  }
+  def couldStop(p: Poll): Boolean =
+    p.stopTime match {
+      case Some(_) => false
+      case None if Poll.isStarted(LocalDateTime.now)(p) => true
+      case _ => false
+    }
 
-  def couldStop(mp: Option[Poll]): Boolean = mp match {
-    case Some(p) =>
-      p.stopTime match {
-        case Some(_) => false
-        case None if Poll.isStarted(LocalDateTime.now)(p) => true
-        case _ => false
-      }
-    case None => false
-  }
+  def isStarted(n: LocalDateTime)(p: Poll): Boolean =
+    p.startTime.exists(n.isAfter)
 
-  def isStarted(now: LocalDateTime)(poll: Poll): Boolean =
-    poll.startTime.exists(now.isAfter)
+  def isStopped(n: LocalDateTime)(p: Poll): Boolean  =
+    p.stopTime.exists(n.isAfter)
 
-  def isStopped(now: LocalDateTime)(poll: Poll): Boolean  =
-    poll.stopTime.exists(now.isAfter)
+  def isActive(n: LocalDateTime)(p: Poll): Boolean =
+    isStarted(n)(p) && !isStopped(n)(p)
 
-  def isActive(now: LocalDateTime)(poll: Poll): Boolean =
-    isStarted(now)(poll) && !isStopped(now)(poll)
-
-  def isVisible(now: LocalDateTime)(poll: Poll): Boolean =
-    poll.visibility && isStarted(now)(poll) || !poll.visibility && isStopped(now)(poll)
+  def isVisible(n: LocalDateTime)(p: Poll): Boolean =
+    p.visibility && isStarted(n)(p) || !p.visibility && isStopped(n)(p)
 }

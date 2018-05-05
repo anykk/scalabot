@@ -8,7 +8,7 @@ package object Results {
   case class PollDeleted(id: Int) extends CommandResult
   case class PollStarted(id: Int) extends CommandResult
   case class PollStopped(id: Int) extends CommandResult
-  case class PollingResult(id: Int) extends CommandResult
+  case class PollingResult(p: Poll) extends CommandResult
 
   case class BeginResult(id: Int) extends CommandResult
   case class EndResult() extends CommandResult
