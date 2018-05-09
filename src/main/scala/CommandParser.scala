@@ -109,7 +109,7 @@ object CommandParser extends RegexParsers with CommandParser {
     case name ~ Choice ~ options if options.nonEmpty => AddQuestion(name, options, Choice)
   }
 
-  def deleteQuestion: Parser[DeleteQuestion] = commandWithId("/deleteQuestion") ^^ {
+  def deleteQuestion: Parser[DeleteQuestion] = commandWithId("/delete_question") ^^ {
     id: Int => DeleteQuestion(id)
   }
 

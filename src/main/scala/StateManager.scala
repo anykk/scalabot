@@ -3,10 +3,10 @@ import java.time.LocalDateTime
 import Commands._
 import Results._
 import cats.data.StateT
-import models.{Contexts, Poll, Polls}
-import models.Types.{GeneralState, User}
+import models._
+import models.Types._
 
-import scala.util.{Success, Try}
+import scala.util.Try
 
 object StateManager {
   import cats.implicits.catsStdInstancesForTry
@@ -34,11 +34,11 @@ object StateManager {
       case r: CreatePoll =>
         withPolls(createPoll(u, r))
 
-      case r: List_ =>
-        withPolls(list(r))
+      case _: List_ =>
+        withPolls(list())
 
       case r: DeletePoll =>
-        withPolls(deletePoll(r, n))
+        withPolls(deletePoll(u, r, n))
 
       case r: StartPoll =>
         withPolls(startPoll(u, r, n))
@@ -52,11 +52,17 @@ object StateManager {
       case r: Begin =>
         both(begin(u, r))
 
-      case r: End =>
+      case _: End =>
         withContexts(end(u))
 
-      case r: View =>
+      case _: View =>
         both(view(u))
+
+      case r: AddQuestion =>
+        both(addQuestion(u, r, n))
+
+      case r: DeleteQuestion =>
+        both(deleteQuestion(u, r, n))
     }
   }
 
@@ -66,14 +72,14 @@ object StateManager {
         r.startTime, r.stopTime, u, Vector.empty))
     } yield PollCreated(id)
 
-  def list(r: List_): StateT[Try, Polls, ListResult] =
+  def list(): StateT[Try, Polls, ListResult] =
     for {
       s <- StateT.get[Try, Polls]
     } yield ListResult(s.m.toList)
 
-  def deletePoll(r: DeletePoll, n: LocalDateTime): StateT[Try, Polls, PollDeleted] =
+  def deletePoll(u: User, r: DeletePoll, n: LocalDateTime): StateT[Try, Polls, PollDeleted] =
     for {
-      _ <- Polls.deletePoll(r.id, n)
+      _ <- Polls.deletePoll(r.id, u, n)
     } yield PollDeleted()
 
   def startPoll(u: User, r: StartPoll, n: LocalDateTime): StateT[Try, Polls, PollStarted] =
@@ -106,11 +112,18 @@ object StateManager {
       p <- Contexts.view(u)
     } yield ViewResult(p)
 
-  def addQuestion(u: User, r: AddQuestion): StateT[Try, GeneralState, QuestionAdded] = ???
+  def addQuestion(u: User, r: AddQuestion, n: LocalDateTime): StateT[Try, GeneralState, QuestionAdded] =
+    for {
+      id <- Contexts.addQuestion(u, Question.fromCommand(r), n)
+    } yield QuestionAdded(id)
 
-  def deleteQuestion(u: User, r: DeleteQuestion): StateT[Try, GeneralState, QuestionDeleted] = ???
+  def deleteQuestion(u: User, r: DeleteQuestion, n: LocalDateTime): StateT[Try, GeneralState, QuestionDeleted] =
+    for {
+      _ <- Contexts.deleteQuestion(u, r.id, n)
+    } yield QuestionDeleted()
 
   def answer(u: User, r: Answer): StateT[Try, GeneralState, AnswerResult] = ???
+
 }
 
 

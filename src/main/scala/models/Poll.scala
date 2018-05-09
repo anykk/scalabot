@@ -14,7 +14,7 @@ final case class Poll(name: String,
                )
 
 object Poll {
-  def haveRights(u: User)(p: Poll): Boolean = p.owner == u
+  def haveRights(u: User, p: Poll): Boolean = p.owner == u
 
   def start(p: Poll, n: LocalDateTime) = Try {
     assert(couldStart(p), "Couldn't start this poll!")

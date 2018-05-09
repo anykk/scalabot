@@ -19,12 +19,13 @@ object Polls {
     } yield s.idx - 1
   }
 
-  def deletePoll(id: Int, n: LocalDateTime): StateT[Try, Polls, Unit] =
+  def deletePoll(id: Int, u: User, n: LocalDateTime): StateT[Try, Polls, Unit] =
     StateT[Try, Polls, Unit] {
       ps =>
         Try {
           assert(ps.m.contains(id), "Poll doesn't exists!")
           val p = ps.m(id)
+          assert(Poll.haveRights(u, p), "You haven't rights!")
           assert(!Poll.isActive(p, n), "Poll is active!")
           ( ps.copy(m = ps.m - id), Unit )
         }
@@ -36,7 +37,7 @@ object Polls {
         Try {
           assert(ps.m.contains(id), "Poll doesn't exists!")
           val p = ps.m(id)
-          assert(Poll.haveRights(u)(p), "You haven't rights!")
+          assert(Poll.haveRights(u, p), "You haven't rights!")
           Poll.start(p, n)
         }.flatMap(mp => mp.map(p => (ps.copy(m = ps.m + (id -> p)), Unit)))
     }
@@ -47,7 +48,7 @@ object Polls {
         Try {
           assert(ps.m.contains(id), "Poll doesn't exists")
           val p = ps.m(id)
-          assert(Poll.haveRights(u)(p), "You haven't rights")
+          assert(Poll.haveRights(u, p), "You haven't rights")
           Poll.stop(p, n)
         }.flatMap(mp => mp.map(p => ( ps.copy(m = ps.m + (id -> p)), Unit )))
     }
