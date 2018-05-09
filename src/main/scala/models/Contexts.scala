@@ -82,4 +82,5 @@ object Contexts {
     }
   }
 
+  def answer()= ???
 }

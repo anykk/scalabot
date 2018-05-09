@@ -3,6 +3,8 @@ package models
 import Commands.AddQuestion
 import Types._
 
+import scala.util.Try
+
 sealed trait Question {
   val name: String
   val options: List[String]
@@ -34,4 +36,13 @@ object Question {
       case Choice => ChoiceQuestion(r.question, r.answers)
       case Multi => MultiQuestion(r.question, r.answers)
     }
+
+  def tryOpen(s: String): Try[String] = Try(s)
+  def tryChoice(s: String): Try[Int] = Try(s.toInt)
+  def tryMulti(s: String): Try[Set[Int]] = Try {
+    val a = s.split("\\s+").map(_.toInt)
+    assert(a.length == a.distinct.length,
+      "You can't vote twice!")
+    a.toSet
+  }
 }
