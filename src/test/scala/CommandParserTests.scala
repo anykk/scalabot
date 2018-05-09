@@ -2,73 +2,32 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 import org.scalatest._
-
-import CommandParser._
 import Commands._
+import models.Poll
+
+import scala.util.{Failure, Success, Try}
 
 
-class CommandParserTests extends  FlatSpec with Matchers {
-  /*
-  it should "parse CreatePoll" in {
+class CommandParserTests extends FlatSpec with Matchers {
+  private val parse = (x: String) => CommandParser.parse(x)
+  private val timeFrom = (x: String) =>
+    LocalDateTime.parse(x, DateTimeFormatter.ofPattern("HH:mm:ss yy:MM:dd"))
 
-    parse("/create_poll (((how are you, darling?))") should be
-    CreatePoll("(how are you darling?)", false, false, None, None)
+  "A Parser" should "parse create_poll correctly" in {
+    val start = "21:00:59 02:01:30"
+    val end = "23:40:59 05:01:29"
 
-    parse("/create_poll (((how are you, darling?)))  (yes)") should be
-    CreatePoll("(how are you, darling?)", true, false, None, None)
-
-    parse("/create_poll (((how are you, darling?)))  (no)") should be
-    CreatePoll("(how are you, darling?)", false, false, None, None)
-
-    parse("/create_poll (((how are you, darling?)))  (yes) (continuous)") should be
-    CreatePoll("(how are you, darling?)", true, true, None, None)
-
-    parse("/create_poll (((how are you, darling?)))  (yes) (continuous) (22:22:22 2018:04:20)") should be
-    CreatePoll("(how are you, darling?)", true, true,
-      Option(LocalDateTime.parse("22:22:22 18:04:20", DateTimeFormatter.ofPattern("HH:mm:ss yy:MM:dd"))), None)
-
-    parse("/create_poll (((how are you, darling?)))  (yes) (continuous) (22:22:22 2018:04:20) (22:22:22 2018:04:21)") should be
-    CreatePoll("(how are you, darling?)", true, true,
-      Option(LocalDateTime.parse("22:22:22 18:04:20", DateTimeFormatter.ofPattern("HH:mm:ss yy:MM:dd"))),
-      Option(LocalDateTime.parse("22:22:22 18:04:21", DateTimeFormatter.ofPattern("HH:mm:ss yy:MM:dd"))))
-
-    parse("/create_poll ((illegalcommand") should be
-    Unrecognized
+    assertResult(parse("/create_poll (name)"))(Success(CreatePoll("name")))
+    assertResult(parse("/create_poll ((())) (no)"))(Success(CreatePoll("( )", anonymity = false)))
+    assertResult(parse("/create_poll (name) ( yes )   (continuous) " + s"($start)"))(Success(CreatePoll("name",
+      anonymity = true,
+      visibility = true,
+      Option(timeFrom(start)))))
+    assertResult(parse("/create_poll(name)(yes)(continuous)" + s"($start)($end)"))(Success(CreatePoll("name",
+      anonymity = true,
+      visibility = true,
+      Option(timeFrom(start)),
+      Option(timeFrom(end)))))
   }
 
-  it should "parse List " in {
-    parse("/list illegalcommand") should be
-    Unrecognized
-
-    parse("/list") should be
-    List_()
-  }
-
-  it should "parse DeletePoll" in{
-
-    parse("/delete_poll") should be
-    Unrecognized
-
-    parse("/delete_poll 1") should be
-    DeletePoll(1)
-  }
-
-  it should "parse StartPoll" in {
-
-    parse("/start_poll") should be
-    Unrecognized
-
-    parse("/start_poll 1") should be
-    StartPoll(1)
-  }
-
-  it should "parse StopPoll" in {
-
-    parse("/stop_poll") should be
-    Unrecognized
-
-    parse("/stop_poll 1") should be
-    StopPoll(1)
-  }
-  */
 }

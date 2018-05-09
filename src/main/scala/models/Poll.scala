@@ -4,7 +4,7 @@ import java.time.LocalDateTime
 import scala.util.Try
 import models.Types.User
 
-case class Poll(name: String,
+final case class Poll(name: String,
                 anonymity: Boolean,
                 visibility: Boolean,
                 startTime: Option[LocalDateTime],
@@ -16,13 +16,13 @@ case class Poll(name: String,
 object Poll {
   def haveRights(u: User)(p: Poll): Boolean = p.owner == u
 
-  def start(p: Poll)(n: LocalDateTime) = Try {
+  def start(p: Poll, n: LocalDateTime) = Try {
     assert(couldStart(p), "Couldn't start this poll!")
     p.copy(startTime = Option(n))
   }
 
-  def stop(p: Poll)(n: LocalDateTime) = Try {
-    assert(couldStop(p), "Couldn't stop this poll!")
+  def stop(p: Poll, n: LocalDateTime) = Try {
+    assert(couldStop(p, n), "Couldn't stop this poll!")
     p.copy(stopTime = Option(n))
   }
 
@@ -32,22 +32,22 @@ object Poll {
       case Some(_) => false
     }
 
-  def couldStop(p: Poll): Boolean =
+  def couldStop(p: Poll, n: LocalDateTime): Boolean =
     p.stopTime match {
       case Some(_) => false
-      case None if Poll.isStarted(LocalDateTime.now)(p) => true
+      case None if Poll.isStarted(p, n) => true
       case _ => false
     }
 
-  def isStarted(n: LocalDateTime)(p: Poll): Boolean =
+  def isStarted(p: Poll, n: LocalDateTime): Boolean =
     p.startTime.exists(n.isAfter)
 
-  def isStopped(n: LocalDateTime)(p: Poll): Boolean  =
+  def isStopped(p: Poll, n: LocalDateTime): Boolean  =
     p.stopTime.exists(n.isAfter)
 
-  def isActive(n: LocalDateTime)(p: Poll): Boolean =
-    isStarted(n)(p) && !isStopped(n)(p)
+  def isActive(p: Poll, n: LocalDateTime): Boolean =
+    isStarted(p, n) && !isStopped(p, n)
 
-  def isVisible(n: LocalDateTime)(p: Poll): Boolean =
-    p.visibility && isStarted(n)(p) || !p.visibility && isStopped(n)(p)
+  def isVisible(p: Poll, n: LocalDateTime): Boolean =
+    p.visibility && isStarted(p, n) || !p.visibility && isStopped(p, n)
 }

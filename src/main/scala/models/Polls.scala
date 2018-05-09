@@ -7,10 +7,10 @@ import models.Types.User
 
 import scala.util.Try
 
-case class Polls(m: Map[Int, Poll], idx: Int = 1)
+final case class Polls(m: Map[Int, Poll], idx: Int = 1)
 
 object Polls {
-  import cats.implicits._
+  import cats.implicits.catsStdInstancesForTry
 
   def addPoll(p: Poll): StateT[Try, Polls, Int] = {
     for {
@@ -19,52 +19,46 @@ object Polls {
     } yield s.idx - 1
   }
 
-  def deletePoll(id: Int): StateT[Try, Polls, Int] =
-    StateT[Try, Polls, Int] {
+  def deletePoll(id: Int, n: LocalDateTime): StateT[Try, Polls, Unit] =
+    StateT[Try, Polls, Unit] {
       ps =>
         Try {
           assert(ps.m.contains(id), "Poll doesn't exists!")
           val p = ps.m(id)
-          assert(!Poll.isActive(LocalDateTime.now)(p), "Poll is active!")
-          (ps.copy(m = ps.m - id), id)
+          assert(!Poll.isActive(p, n), "Poll is active!")
+          ( ps.copy(m = ps.m - id), Unit )
         }
     }
 
-  def startPoll(id: Int, u: User): StateT[Try, Polls, Int] =
-    StateT[Try, Polls, Int] {
+  def startPoll(id: Int, u: User, n: LocalDateTime): StateT[Try, Polls, Unit] =
+    StateT[Try, Polls, Unit] {
       ps =>
         Try {
           assert(ps.m.contains(id), "Poll doesn't exists!")
           val p = ps.m(id)
           assert(Poll.haveRights(u)(p), "You haven't rights!")
-          val n = LocalDateTime.now
-          Poll.start(p)(n)
-        }.flatMap(mp => mp.map(p => (ps.copy(m = ps.m + (id -> p)), id)))
+          Poll.start(p, n)
+        }.flatMap(mp => mp.map(p => (ps.copy(m = ps.m + (id -> p)), Unit)))
     }
 
-  def stopPoll(id: Int, u: User): StateT[Try, Polls, Int] =
-    StateT[Try, Polls, Int] {
+  def stopPoll(id: Int, u: User, n: LocalDateTime): StateT[Try, Polls, Unit] =
+    StateT[Try, Polls, Unit] {
       ps =>
         Try {
           assert(ps.m.contains(id), "Poll doesn't exists")
           val p = ps.m(id)
           assert(Poll.haveRights(u)(p), "You haven't rights")
-          val n = LocalDateTime.now
-          Poll.stop(p)(n)
-        }.flatMap(mp => mp.map(p => (ps.copy(m = ps.m + (id -> p)), id)))
+          Poll.stop(p, n)
+        }.flatMap(mp => mp.map(p => ( ps.copy(m = ps.m + (id -> p)), Unit )))
     }
 
-  def pollResult(id: Int): StateT[Try, Polls, Poll] =
+  def pollResult(id: Int, n: LocalDateTime): StateT[Try, Polls, Poll] =
     StateT[Try, Polls, Poll] {
       ps =>
         Try {
           assert(ps.m.contains(id), "Poll doesn't exists")
           val p = ps.m(id)
-          val n = LocalDateTime.now
-          if (p.visibility)
-            assert(Poll.isActive(n)(p), "Poll isn't active!")
-          else
-            assert(!Poll.isActive(n)(p), "Poll is active but visibility is afterstop!")
+          assert(Poll.isVisible(p, n), "Can't show result of this poll!")
           (ps, p)
         }
     }

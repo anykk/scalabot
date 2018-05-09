@@ -8,20 +8,24 @@ sealed trait Question {
   val answered: List[User]
 }
 
-case class OpenQuestion(name: String,
+final case class OpenQuestion(name: String,
                         answers: List[OpenAnswer] = Nil,
                         answered: List[User] = Nil,
                         options: List[String] = Nil
                        ) extends Question
 
-case class ChoiceQuestion(name: String,
+final case class ChoiceQuestion(name: String,
                           options: List[String],
                           answers: List[ChoiceAnswer] = Nil,
                           answered: List[User] = Nil
                          ) extends Question
 
-case class MultiQuestion(name: String,
+final case class MultiQuestion(name: String,
                          options: List[String],
                          answered: List[User] = Nil,
                          answers: List[MultiAnswer] = Nil
                         ) extends Question
+
+object Question {
+
+}

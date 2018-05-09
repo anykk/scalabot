@@ -1,10 +1,32 @@
+import java.time.LocalDateTime
+
+import models.{Contexts, Poll, Polls}
+
+import scala.util.{Failure, Success}
 
 object Main {
-  def main(args: Array[String]): Unit = {
-    //TelegramBot.run()
 
-    //res = StateManager(state: (Polls, Contexts), cmd: Command)
-    //res match { case Success(..) => do some reassignments & render reply; case Failure(..) => send message}
+  val parse = (s: String) => CommandParser.parse(s)
+  var state = (Polls(Map.empty), Contexts(Map.empty))
+
+  def main(args: Array[String]): Unit = {
+    loop()
+  }
+
+  @scala.annotation.tailrec
+  def loop(): Unit = {
+    parse(scala.io.StdIn.readLine("Command: ")) match {
+      case Success(v) =>
+        val ts = StateManager(state, 1, v, LocalDateTime.now)
+        ts match {
+          case Success(va) =>
+            state = va._1
+            println(va._2.toString)
+          case Failure(e) => println(e.getMessage)
+        }
+      case Failure(e) => println(e.getMessage)
+    }
+    loop()
   }
 }
 

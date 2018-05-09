@@ -1,2 +1,5 @@
 .idea/
+project/target/
+project/project/
+target/
 src/main/scala/bot.token

@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20180505235915"/>
+		date="20180509175304"/>
 	<dependencies>
 		<module organisation="info.mukel" name="telegrambot4s_2.12">
 			<revision name="3.0.14" status="release" pubdate="20171027213452" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/mukel/telegrambot4s" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="8">
