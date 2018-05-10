@@ -82,5 +82,24 @@ object Contexts {
     }
   }
 
-  def answer()= ???
+  def answer(u: User, id: Int, n: LocalDateTime, answer: String): StateT[Try, GeneralState, Unit] = StateT {
+    s => Try {
+      assert(alreadyIn(s._2, u),
+        "Not in context!")
+      assert(s._1.m.contains(s._2.m(u)),
+        "Poll was deleted! Sorry, but please go end.")
+      val i = s._2.m(u)
+      val p = s._1.m(i)
+      assert(Poll.isActive(p, n),
+        "Poll isn't active now!!")
+      assert(p.questions.length >= id,
+        "Question with this id doesn't exists!")
+      val q = p.questions(id)
+      assert(!q.answered.contains(u), "You has already answered!")
+      ( s.copy(_1 =
+        s._1.copy(m =
+          s._1.m updated(i, p.copy(
+            questions = p.questions.updated(id, Question.tryAnswer(q, u, p.anonymity, answer).get))))), Unit )
+    }
+  }
 }

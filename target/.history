@@ -1,2 +1,5 @@
 ;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/kiril/AppData/Local/Temp/sbt-structure.xml; session clear-all
 all {file:/C:/Users/kiril/Desktop/Workspace/Scala/scalabot/}scalabot/products {file:/C:/Users/kiril/Desktop/Workspace/Scala/scalabot/}scalabot/test:products
+:help
+help
+all {file:/C:/Users/kiril/Desktop/Workspace/Scala/scalabot/}scalabot/products {file:/C:/Users/kiril/Desktop/Workspace/Scala/scalabot/}scalabot/test:products

@@ -63,6 +63,9 @@ object StateManager {
 
       case r: DeleteQuestion =>
         both(deleteQuestion(u, r, n))
+
+      case r: Answer =>
+        both(answer(u, r, n))
     }
   }
 
@@ -122,8 +125,10 @@ object StateManager {
       _ <- Contexts.deleteQuestion(u, r.id, n)
     } yield QuestionDeleted()
 
-  def answer(u: User, r: Answer): StateT[Try, GeneralState, AnswerResult] = ???
-
+  def answer(u: User, r: Answer, n: LocalDateTime): StateT[Try, GeneralState, AnswerResult] =
+    for {
+      _ <- Contexts.answer(u, r.id, n, r.answers)
+    } yield AnswerResult()
 }
 
 

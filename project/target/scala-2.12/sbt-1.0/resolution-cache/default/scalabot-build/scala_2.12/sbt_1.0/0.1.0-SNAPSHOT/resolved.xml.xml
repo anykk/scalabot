@@ -4,7 +4,7 @@
 		module="scalabot-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20180509180523"
+		publication="20180510151956"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
