@@ -55,6 +55,7 @@ object Question {
           assert(a.isSuccess, "Answer isn't successful!")
           a match {
             case Success(answer) =>
+              assert(q.options.lift(answer).isDefined, "Answer isn't exists!")
               if (anonymous)
                 q.copy(answers = q.answers :+ (None, answer), answered = q.answered :+ u)
               else
@@ -65,6 +66,7 @@ object Question {
           val a = tryMulti(s)
           a match {
             case Success(answer) =>
+              assert(answer.forall(a => q.options.lift(a).isDefined), "Answer isn't exists!")
               if (anonymous)
                 q.copy(answers = q.answers :+ (None, answer), answered = q.answered :+ u)
               else

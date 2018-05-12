@@ -10,7 +10,8 @@ object Main {
   var state = (Polls(Map.empty), Contexts(Map.empty))
 
   def main(args: Array[String]): Unit = {
-    loop()
+    //loop()
+    TelegramBot.run()
   }
 
   @scala.annotation.tailrec
