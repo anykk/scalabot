@@ -10,7 +10,7 @@ import scala.util.Try
 final case class Polls(m: Map[Int, Poll], idx: Int = 1)
 
 object Polls {
-  import cats.implicits.catsStdInstancesForTry
+  import cats.instances.try_._
 
   def addPoll(p: Poll): StateT[Try, Polls, Int] = {
     for {

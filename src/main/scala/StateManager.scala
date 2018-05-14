@@ -9,7 +9,7 @@ import models.Types._
 import scala.util.Try
 
 object StateManager {
-  import cats.implicits.catsStdInstancesForTry
+  import cats.instances.try_._
 
   def apply(o_s: (Polls, Contexts),
             u: User, cmd: Command,
