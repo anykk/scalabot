@@ -10,7 +10,9 @@ import scala.util.Try
 final case class Polls(m: Map[Int, Poll], idx: Int = 1)
 
 object Polls {
+
   import cats.instances.try_._
+  import Assertions._
 
   def addPoll(p: Poll): StateT[Try, Polls, Int] = {
     for {
@@ -22,45 +24,43 @@ object Polls {
   def deletePoll(id: Int, u: User, n: LocalDateTime): StateT[Try, Polls, Unit] =
     StateT[Try, Polls, Unit] {
       ps =>
-        Try {
-          assert(ps.m.contains(id), "Poll doesn't exists!")
-          val p = ps.m(id)
-          assert(Poll.haveRights(u, p), "You haven't rights!")
-          assert(!Poll.isActive(p, n), "Poll is active!")
-          ( ps.copy(m = ps.m - id), Unit )
-        }
+        for {
+          _ <- assertPollContains(ps, id)
+          p = ps.m(id)
+          _ <- assertHaveRights(p, u)
+          _ <- assertIsActive(p, n)
+        } yield (ps.copy(m = ps.m - id), Unit)
     }
 
   def startPoll(id: Int, u: User, n: LocalDateTime): StateT[Try, Polls, Unit] =
     StateT[Try, Polls, Unit] {
       ps =>
-        Try {
-          assert(ps.m.contains(id), "Poll doesn't exists!")
-          val p = ps.m(id)
-          assert(Poll.haveRights(u, p), "You haven't rights!")
-          Poll.start(p, n)
-        }.flatMap(mp => mp.map(p => (ps.copy(m = ps.m + (id -> p)), Unit)))
+        for {
+          _ <- assertPollContains(ps, id)
+          p = ps.m(id)
+          _ <- assertHaveRights(p, u)
+          p <- Poll.start(p, n)
+        } yield (ps.copy(m = ps.m updated(id, p)), Unit)
     }
 
   def stopPoll(id: Int, u: User, n: LocalDateTime): StateT[Try, Polls, Unit] =
     StateT[Try, Polls, Unit] {
       ps =>
-        Try {
-          assert(ps.m.contains(id), "Poll doesn't exists")
-          val p = ps.m(id)
-          assert(Poll.haveRights(u, p), "You haven't rights")
-          Poll.stop(p, n)
-        }.flatMap(mp => mp.map(p => ( ps.copy(m = ps.m + (id -> p)), Unit )))
+        for {
+          _ <- assertPollContains(ps, id)
+          p = ps.m(id)
+          _ <- assertHaveRights(p, u)
+          p <- Poll.stop(p, n)
+        } yield (ps.copy(m = ps.m updated(id, p)), Unit)
     }
 
   def pollResult(id: Int, n: LocalDateTime): StateT[Try, Polls, Poll] =
     StateT[Try, Polls, Poll] {
       ps =>
-        Try {
-          assert(ps.m.contains(id), "Poll doesn't exists")
-          val p = ps.m(id)
-          assert(Poll.isVisible(p, n), "Can't show result of this poll!")
-          (ps, p)
-        }
+        for {
+          _ <- assertPollContains(ps, id)
+          p = ps.m(id)
+          _ <- assertIsNotVisible(p, n)
+        } yield (ps, p)
     }
 }

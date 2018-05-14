@@ -37,6 +37,7 @@ object Question {
       case Multi => MultiQuestion(r.question, r.answers)
     }
 
+  // TODO: try to refactor ugly method
   def tryAnswer(q: Question, u: User, anonymous: Boolean, s: String): Try[Question] =
     Try {
       q match {

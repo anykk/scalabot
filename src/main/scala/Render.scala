@@ -12,7 +12,7 @@ object Render {
       case PollDeleted() => "Poll was successfully deleted."
       case PollStarted() => "Poll was successfully started."
       case PollStopped() => "Poll was successfully stopped."
-      case PollingResult(p) => "result..." // TODO: result with percents
+      case PollingResult(p) => p.toString // TODO: result with percents
       case BeginResult() => "Context was successfully changed."
       case EndResult() => "You left the context."
       case ViewResult(p) => viewPoll(p)
