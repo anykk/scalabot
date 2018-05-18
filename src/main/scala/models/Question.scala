@@ -37,45 +37,49 @@ object Question {
       case Multi => MultiQuestion(r.question, r.answers)
     }
 
-  // TODO: try to refactor ugly method
   def tryAnswer(q: Question, u: User, anonymous: Boolean, s: String): Try[Question] =
-    Try {
-      q match {
-        case q: OpenQuestion =>
-          val a = tryOpen(s)
-          a match {
-            case Success(answer) =>
-              if (anonymous)
-                q.copy(answers = q.answers :+ (None, answer), answered = q.answered :+ u)
-              else
-                q.copy(answers = q.answers :+ (Option(u), answer), answered = q.answered :+ u)
-            case Failure(e) => throw e
-          }
-        case q: ChoiceQuestion =>
-          val a = tryChoice(s)
-          assert(a.isSuccess, "Answer isn't successful!")
-          a match {
-            case Success(answer) =>
-              assert(q.options.lift(answer).isDefined, "Answer isn't exists!")
-              if (anonymous)
-                q.copy(answers = q.answers :+ (None, answer), answered = q.answered :+ u)
-              else
-                q.copy(answers = q.answers :+ (Option(u), answer), answered = q.answered :+ u)
-            case Failure(e) => throw e
-          }
-        case q: MultiQuestion =>
-          val a = tryMulti(s)
-          a match {
-            case Success(answer) =>
-              assert(answer.forall(a => q.options.lift(a).isDefined), "Answer isn't exists!")
-              if (anonymous)
-                q.copy(answers = q.answers :+ (None, answer), answered = q.answered :+ u)
-              else
-                q.copy(answers = q.answers :+ (Option(u), answer), answered = q.answered :+ u)
-            case Failure(e) => throw e
-          }
-      }
+    q match {
+      case q: OpenQuestion => answerOpen(q, u, anonymous, s)
+      case q: ChoiceQuestion => answerChoice(q, u, anonymous, s)
+      case q: MultiQuestion => answerMulti(q, u, anonymous, s)
     }
+
+  private def answerOpen(q: OpenQuestion, u: User, a: Boolean, s: String): Try[OpenQuestion] = {
+    tryOpen(s).map({ answer =>
+      if (a)
+        q.copy(answers = q.answers :+ (None, answer), answered = q.answered :+ u)
+      else
+        q.copy(answers = q.answers :+ (Option(u), answer), answered = q.answered :+ u)
+    })
+  }
+
+  private def answerChoice(q: ChoiceQuestion, u: User, a: Boolean, s: String): Try[ChoiceQuestion] = {
+    val ma = tryChoice(s)
+    for {
+      _ <- Try { assert(ma.isSuccess, "Answer isn't successful!") }
+      answer <- ma
+      _ <- Try { assert(q.options.lift(answer).isDefined, "Answer isn't exists!") }
+    } yield {
+      if (a)
+        q.copy(answers = q.answers :+ (None, answer), answered = q.answered :+ u)
+      else
+        q.copy(answers = q.answers :+ (Option(u), answer), answered = q.answered :+ u)
+    }
+  }
+
+  private def answerMulti(q: MultiQuestion, u: User, a: Boolean, s: String): Try[MultiQuestion] = {
+    val ma = tryMulti(s)
+    for {
+      _ <- Try { assert(ma.isSuccess, "Answer isn't successful!") }
+      answer <- ma
+      _ <- Try { assert(answer.forall(a => q.options.lift(a).isDefined), "Answer isn't exists!") }
+    } yield {
+      if (a)
+        q.copy(answers = q.answers :+ (None, answer), answered = q.answered :+ u)
+      else
+        q.copy(answers = q.answers :+ (Option(u), answer), answered = q.answered :+ u)
+    }
+  }
 
   private def tryOpen(s: String): Try[String] = Try(s)
   private def tryChoice(s: String): Try[Int] = Try(s.toInt)
