@@ -43,7 +43,7 @@ object Render {
      | Visibility: ${visibilityMap(p.visibility)}
      | Start time: ${date(p.startTime)}
      | Stop time: ${date(p.stopTime)}
-     |Questions:
+     | Questions:
      |${p.questions.zipWithIndex.map(q => viewQuestion(q._1, q._2)).mkString("\n")
   }
   """.stripMargin
@@ -60,11 +60,11 @@ object Render {
       if (q.options.isEmpty)
         "Empty."
       else
-        q.options.zipWithIndex.map(o => s"""  ${o._2}: "${o._1}"""").mkString("\n")
+        q.options.zipWithIndex.map(o => s"""    ${o._2}: "${o._1}"""").mkString("\n")
     s"""Question [$id]
-       | Name: "${q.name}"
-       | Type: ${qType(q)}
-       | Options:
+       |   Name: "${q.name}"
+       |   Type: ${qType(q)}
+       |   Options:
        |$options
      """.stripMargin
   }
