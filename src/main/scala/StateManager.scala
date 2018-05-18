@@ -9,9 +9,9 @@ import models.Types._
 import scala.util.Try
 
 object StateManager {
-  import cats.instances.try_._
+  import cats.instances.try_.catsStdInstancesForTry
 
-  def apply(o_s: (Polls, Contexts),
+  def apply(o_s: GeneralState,
             u: User, cmd: Command,
             n: LocalDateTime): Try[(GeneralState, CommandResult)] =
   {

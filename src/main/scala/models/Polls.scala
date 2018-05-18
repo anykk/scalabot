@@ -11,7 +11,7 @@ final case class Polls(m: Map[Int, Poll], idx: Int = 1)
 
 object Polls {
 
-  import cats.instances.try_._
+  import cats.instances.try_.catsStdInstancesForTry
   import Assertions._
 
   def addPoll(p: Poll): StateT[Try, Polls, Int] = {

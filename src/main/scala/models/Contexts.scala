@@ -10,7 +10,7 @@ import scala.util.Try
 final case class Contexts(m: Map[User, Int])
 
 object Contexts {
-  import cats.instances.try_._
+  import cats.instances.try_.catsStdInstancesForTry
   import Assertions._
 
   def begin(u: User, id: Int): StateT[Try, GeneralState, Unit] = StateT {

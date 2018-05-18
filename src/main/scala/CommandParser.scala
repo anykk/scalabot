@@ -129,14 +129,15 @@ object CommandParser extends RegexParsers with CommandParser {
     view           |
     addQuestion    |
     deleteQuestion |
-    answer withFailureMessage "Bad command!"
+    answer
   }
 
   override def parse(string: String): Try[Command] = {
     Try {
       CommandParser.parseAll(command, string) match {
         case Success(r, _) => r
-        case Failure(m, _) => throw new IllegalArgumentException(s"$m\n$string")
+        case Failure(_, _) => throw new IllegalArgumentException(s"Bad command!\n$string")
+        case Error(_, _) => throw new IllegalArgumentException(s"Bad command!\n$string")
       }
     }
   }

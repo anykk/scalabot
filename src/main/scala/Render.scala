@@ -24,8 +24,8 @@ object Render {
       case AnswerResult() => "Answer was accepted."
     }
 
-  private def viewList(l: List[(Int, Poll)]): String = {
-    val r = l.map(p => p._1 + s": '${p._2.name}'")
+  def viewList(l: List[(Int, Poll)]): String = {
+    val r = l.map(p => p._1 + s""": "${p._2.name}"""")
     if (r.isEmpty) "Empty." else r.mkString("\n")
   }
 
@@ -37,7 +37,7 @@ object Render {
       case None => "Not set"
     }
 
-  private def viewPoll(p: Poll): String =
+  def viewPoll(p: Poll): String =
   s"""Poll "${p.name}":
      | Anonymity: ${anonymityMap(p.anonymity)}
      | Visibility: ${visibilityMap(p.visibility)}
@@ -78,15 +78,15 @@ object Render {
   private def percent(q: OpenQuestion, answer: String): Int =
     (q.answers.count(_._2 == answer) / q.answered.length.toFloat * 100).toInt
 
-  def choiceResult(q: ChoiceQuestion): String =
+  private def choiceResult(q: ChoiceQuestion): String =
     s"""${q.options.zipWithIndex.map(i =>
       "    \"" + i._1 + "\": " + percent(q, i._2) + "%").mkString("\n")}""".stripMargin
 
-  def multiResult(q: MultiQuestion): String =
+  private def multiResult(q: MultiQuestion): String =
     s"""${q.options.zipWithIndex.map(i =>
       "    \"" + i._1 + "\": " + percent(q, i._2) + "%").mkString("\n")}""".stripMargin
 
-  def openResult(q: OpenQuestion): String =
+  private def openResult(q: OpenQuestion): String =
     s"""${q.answers.map(_._2).toSet[String].map(s =>
       "    \"" + s + "\": " + percent(q, s) + "%").mkString("\n")}""".stripMargin
 
@@ -94,7 +94,7 @@ object Render {
     s"""Poll "${p.name}":
        |${p.questions.map(questionResult).mkString("\n")}""".stripMargin
 
-  def questionResult(q: Question): String =   s"""  ${q.name}" [${qType(q)}]:\n""" +
+  private def questionResult(q: Question): String =   s"""  ${q.name}" [${qType(q)}]:\n""" +
     (q match {
       case x: ChoiceQuestion => choiceResult(x)
       case x: MultiQuestion => multiResult(x)
