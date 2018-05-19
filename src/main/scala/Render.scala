@@ -80,15 +80,15 @@ object Render {
 
   private def choiceResult(q: ChoiceQuestion): String =
     s"""${q.options.zipWithIndex.map(i =>
-      "    \"" + i._1 + "\": " + percent(q, i._2) + "%").mkString("\n")}""".stripMargin
+      s"""    "${i._1}": ${percent(q, i._2)}%""").mkString("\n")}""".stripMargin
 
   private def multiResult(q: MultiQuestion): String =
     s"""${q.options.zipWithIndex.map(i =>
-      "    \"" + i._1 + "\": " + percent(q, i._2) + "%").mkString("\n")}""".stripMargin
+      s"""    "${i._1}": ${percent(q, i._2)}%""").mkString("\n")}""".stripMargin
 
   private def openResult(q: OpenQuestion): String =
     s"""${q.answers.map(_._2).toSet[String].map(s =>
-      "    \"" + s + "\": " + percent(q, s) + "%").mkString("\n")}""".stripMargin
+      s"""    "$s": ${percent(q, s)}%""").mkString("\n")}""".stripMargin
 
   def viewResult(p: Poll): String =
     s"""Poll "${p.name}":
