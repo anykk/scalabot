@@ -3,34 +3,39 @@ import java.time.format.DateTimeFormatter
 
 import Commands._
 import Results._
-import models.{Contexts, Poll, Polls, Types}
+import models.{Contexts, Poll, Polls}
 import org.scalatest._
 
 import scala.util.{Failure, Success, Try}
 
 
 class CommandsTests extends FlatSpec with Matchers {
-
-  val testmap = Map(1 -> Poll("name", true, false, None, None, 1, Vector.empty ),
-                           2 -> Poll("name2", true, false, None, None, 1, Vector.empty ))
-
-  "State Manager" should "create poll" in {
-    assertResult(StateManager((Polls(Map.empty), Contexts(Map.empty)), 1, CreatePoll("name"), LocalDateTime.now))(Try {
-      ((Polls(Map(1 -> Poll("name", true, false, None, None, 1, Vector.empty )), 2), Contexts(Map.empty)), PollCreated(1)) })
-  }
-
-  it should "delete poll " in {
-    assertResult(StateManager((Polls(testmap), Contexts(Map.empty)), 1, DeletePoll(1), LocalDateTime.now)) (Try{
-      ( (Polls(Map(2 -> Poll("name2", true, false, None, None, 1, Vector.empty)), 1) , Contexts(Map.empty)) , PollDeleted()) })
-
-    assert(StateManager((Polls(testmap), Contexts(Map.empty)), 1, DeletePoll(3), LocalDateTime.now).isFailure)
-  }
+  private var testState = (Polls(Map.empty), Contexts(Map.empty))
 
   private val timeFrom = (x: String) =>
     LocalDateTime.parse(x, DateTimeFormatter.ofPattern("HH:mm:ss yy:MM:dd"))
 
   val start = "21:00:59 02:01:30"
   val end = "23:40:59 05:01:29"
+
+
+  "State Manager" should "create poll" in {
+    assertResult({
+      val r = StateManager(testState, 1, CreatePoll("test_poll"), LocalDateTime.now)
+      testState = r.get._1
+      r.get._2
+    })(PollCreated(1))
+  }
+
+  it should "delete poll " in {
+    assert(StateManager(testState, 1, DeletePoll(2), LocalDateTime.now).isFailure)
+    assert(StateManager(testState, 2, DeletePoll(1), LocalDateTime.now).isFailure)
+    assertResult({
+      val r = StateManager(testState, 1, DeletePoll(1), LocalDateTime.now)
+      testState = r.get._1
+      r.get._2
+    })(PollDeleted())
+  }
 
   it should "stop poll" in {
     assertResult(StateManager((Polls(Map(2 -> Poll("name2", true, false, Option(timeFrom(start)),
